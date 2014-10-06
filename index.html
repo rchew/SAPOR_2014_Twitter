@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>SAPOR 2014 - Using Twitter Data for Research</title>
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/twitter.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Using Twitter Data for Research</h1>
+					<h3>Issues of Data Retrieval, Management, and Processing </h3>
+					<p>
+						<small><a href="http://www.rti.org/newsroom/people.cfm?obj=18917A76-CE03-097B-1D7B931A3EC50A70">Rob Chew</a></small></br><small><a href="http://www.rti.org/"> RTI International </a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>The Social Media Landscape</h2>
+						<p>Opinion's never been this <em>cheap</em>, <em>timely</em>, or <em>abundant</em></p>
+						<img width="150" height="150" src="http://selfpublishingadvice.org/wp-content/uploads/2013/10/twitter-1024x1024.png"><img width="150" height="150" src="http://www.ihd-wallpapers.com/wp-content/uploads/2014/09/Facebook_logo-2.jpg"><img width="150" height="150" src="http://www.droid-life.com/wp-content/uploads/2012/03/Instagram.png"><img width="150" height="150" src="http://uploadwp.com/wp-content/uploads/pinterest-button.png"><img width="150" height="150" src="http://www.ihotwallpapers.com/wp-content/uploads/2014/09/Tumblr-logo-3.jpg">
+						
+						<p>
+							<ul>	
+	        					<li class="fragment">Harder to acquire data from traditional survey methods
+		        					<ul>
+		        						<li class="fragment"><em><strong>falling response rates</strong></em></li>
+		        						<li class="fragment"><em><strong>inadequate sample frames</strong></em></li>
+		        					</ul>
+		        				</li>
+		        				<p></p>
+		        				<li class="fragment">Huge opportunity for survey researchers to harness insight with social media</li>	
+	        				</ul>
+						</p>
+
+					<aside class="notes">
+        				<ul>	
+        					<li>Huge opportunity for social scientists 	/ survey researchers to understand what people are thinking, discover how 	information spreads throughout social networks, and track the evolution of important topics / events over time.</li>
+							<li>With the continuing trend of falling response rates and inadequate sampling frames, the potential for harnessing insight that’s cheap and timely without burdening respondents is an enticing proposition.</li>
+						</ul>
+   					 </aside>
+				</section>
+
+				<section>
+					<!-- <h2>Twitter</h2> -->
+					<img width="600" height="225" src="http://3qdigital.com/wp-content/uploads/2014/08/twitter-logo.png?adfd13">
+					<p>
+					<ul>
+					    <li class="fragment">One of the most important social networks due to utilization and data access</li>
+					    <li class="fragment">Twitter users are only <a href="http://www.pewinternet.org/2013/12/30/social-media-update-2013/">18% of internet users and 14% of the overall adult population</a></li>
+					    <li class="fragment">Their demographic profile is <a href="http://www.journalism.org/2013/11/04/twitter-news-consumers-young-mobile-and-educated/">not reflective of the full population</a></li>
+					    <li class="fragment">Nonetheless, Twitter data has been used effectively in correlating with <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0014118">flu outbreaks</a>, <a href="http://arxiv.org/abs/1003.5699">movie box office sales</a>, <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.184.3458">opinions about politics and the economy</a></li>
+					</ul>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Twitter Data Access</h2>
+						 
+						<img src="/img/twitter_compare.png">
+						<p>Three main ways to get Twitter data: 
+							<ul>
+								<li><a href="#/monitor">Social Media Monitoring Firms</a></li>
+								<li><a href="#/resell">Twitter Authorized Resellers</a></li>
+								<li><a href="#/api">Twitter API</a></li>
+							</ul>
+						</p>
+						
+					</section>
+
+					<section id="monitor">
+						<h2>Social Media Monitoring</h2>
+						<p> <em>(Radian6, Crimson Hexagon, etc.) </em><br>
+							<img width="655" height="500" src="http://www.crimsonhexagon.com/wp-content/uploads/2012/05/Crimson-Hexagon-French-Election.png">
+						</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Ideal for tracking brands/issues in real-time, used by large companies and PR firms to address press in a timely fashion.</li>
+								<li>Has build-in tools to help handle volume, workflow, and reporting.</li>
+								<li>Offers in-house technical support for questions.</li>
+								<li>Often expensive subscription model but covers other social media outlets as well</li>
+								<li>As with most “out of the box” tools, analyses limited by the scope of the tools made available</li>
+								<li>Methodology not always transparent</li>
+								<li>Usually, limited data range (3 months)</li>
+								<li>May or may not have “Firehose” access</li>
+							</ul>
+						</aside>
+						
+					</section>
+
+					<section id="resell">
+						<h2>Twitter Authorized Resellers</h2>
+						<p> <em>(GNIP, Datasift)</em> <br>
+						<img src="http://genesysguru.com/blog/files/2011/05/image-40.jpg"
+						</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Allows access to the Twitter “Firehose”, the totality of tweets on Twitter</li>
+								<li>More of a data vendor (DaaS) than a social media platform</li>
+								<li>Have access to historic data Offers in-house technical support for questions.</li>
+								<li>Often expensive</li>
+								<li>Often requires infrastructure to analyses information yourself</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section id="api">
+						<h2>Twitter API</h2>
+						<img width="700" height="550" src="/img/api.png">
+
+						<aside class="notes">
+							<ul>
+								<li>Application Programming Interface</li>
+								<li>An interface that allows you to directly connect and interact with an application (in our case, Twitter), instead of needing to read a webpage like a human does.</li>
+								<li>Can be thought of as a “menu” that shows the different data the applications can return. </li>
+								<li>Allows access to Twitter data directly</li>
+								<li>Provides access to both historic REST API data and Streaming “1%” API</li>
+								<li>Free!</li>
+								<li>API limits on the number of tweets/user profiles that are allowed to access at one time.</li>
+								<li>Requires some technical/programming knowledge</li>
+								<li>No support (other than the internet and Twitter documentation)</li>
+								<li><a href="https://dev.twitter.com/rest/tools/console">Explorer Tool</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+			
+				<section>
+					<h2>Twitter API: REST vs. Streaming</h2>
+					
+						<img width="300" height="330"  align="left"src="/img/chip_choose"/>
+						
+						<img width="550" height="330"  src="/img/chip_factory"/>
+
+					<ul>
+						<li class="fragment"> <strong>REST API</strong> - To get information, user must specifically request it
+						<ul>
+							<li> Well over 50 different REST API "Resources"</li>
+						</ul>
+						</li>
+						<li class="fragment"> <strong>Streaming API</strong> - Once request is made, provides continuous stream of updates without further input from user (up to 1% full twitter stream)
+						<ul>
+								<li> Has "Public", "User", and "Site" streams</li>
+						</ul>
+						</li>
+					</ul>
+					
+					<aside class="notes">
+						<ul>
+							<li>REST (Representational StateTransfer)
+							<ul>
+								<li>“Pull” strategy for data retrieval</li>
+								<li>To get information, user must specifically request it</li>
+								<li>GET / POST</li>
+							</ul>
+							</li>
+							<li>Streaming
+							<ul>
+								<li>“Push” strategy for data retrieval</li>
+								<li>Once request made, provides continuous stream of updates w/o further input fromuser</li>
+								<li>Three end point types:
+							<ul>
+								<li>Public - public tweets on twitter</li>
+								<li>User - single user stream</li>
+								<li>Site - multi-user streams intended for apps which accessTweets from multiple users</li>
+							</ul>
+							</li>
+						</ul>
+					</adside>
+				</section>
+
+				<section>
+						<h2>Twitter Data</h2>
+							<ul>
+								<li class="fragment"><a href="https://dev.twitter.com/rest/reference/get/users/lookup"><strong>Information about a user</strong></a>
+									<ul>
+										<li>18,000 profiles per 15 mins</li>
+									</ul>
+								</li>
+								<li class="fragment"><strong>A user’s network consisting of his connections (<a href="https://dev.twitter.com/rest/reference/get/friends/list">Friends</a>, <a href="https://dev.twitter.com/rest/reference/get/followers/list">Followers)</strong></a>
+									<ul>
+										<li>300 profiles per 15 mins</li>
+									</ul>
+								</li>
+								<li class="fragment"><a href="https://dev.twitter.com/rest/reference/get/statuses/user_timeline"><strong>Tweets published by a user</strong></a>
+									<ul>
+										<li>Up to 36,000 tweets per 15 mins</li>
+										<li>Also available from Streaming API</li>
+									</ul>
+								</li>
+								<li class="fragment"><a href="https://dev.twitter.com/rest/reference/get/search/tweets"><strong>Search results on Twitter</strong></a>
+									<ul>
+										<li>Up to 18,000 tweets per 15 mins</li>
+										<li>Also available from Streaming API</li>
+									</ul>
+								</li>
+								<li class="fragment"><strong>Location of Tweets</strong>
+									<ul>
+										<li>Location for users/tweets embedded in objects (~1% complete)</li>
+										<li>Can also <a href="https://dev.twitter.com/rest/public/search-by-place">search tweets for a specific area</a></li>
+									</ul>
+								</li>
+
+							</ul>
+
+
+
+
+						<aside class="notes">
+						<ul>
+						<li><strong>Users</strong>
+							<ul>
+							<li>Users can be anyone or anything. They tweet, follow, have a timeline, can be mentioned, and can be looked up in bulk.</li>
+							<li><em>Attributes:</em>  User name, twitter handle, location, profile description, follower/friends/tweet counts, verified, profile creation date</li>
+							</ul>
+						</li>
+						<li><strong>Tweets</strong>
+						<ul>
+							<li>Tweets are the basic atomic building block of all things Twitter. Tweets, also known more generically as “status updates.</li>
+						</ul>
+						</li>
+						<li><strong>Entities</strong>
+						<ul>
+							<li> Entities provide metadata and additional contextual information about content posted on Twitter. Entities are never divorced from the content they describe. In API v1.1, entities are returned wherever tweets are found in the API.</li>
+							<li> Hashtags, URLs, media, user mentions</li>
+						</ul>
+						<li><strong>Place</strong>
+						<ul>
+							<li>Places are specific, named locations with corresponding geo coordinates. They can be attached to Tweets by specifying a place_id when tweeting. Tweets 	associated with places are not necessarily issued from that location but could also potentially be about that location. Places can be searched for.</li>
+						</ul>
+						</li>
+						</ul>
+
+
+						<ul>
+							<li>Many API calls available depending on what you’re interested in (how many?)
+							<li>https://dev.twitter.com/overview/documentation</li>
+						</ul>
+						<ul>
+							<li>Most common types of info accessible from the API:
+							<ul>
+								<li><strong>Information about a user (REST)</strong>
+								<li><strong>A user’s network consisting of his connections (REST)</strong>
+								<li><strong>Tweets published by a user (REST, Streaming)</strong>
+								<li><strong>Search results on Twitter (REST, Streaming)</strong>
+								<li><strong>Location of Tweets</strong>
+							</ul>
+							</li>
+						</ul>
+
+						<h4>Information about a user (REST)</h4>
+						<ul>
+							<li>Twitter Object: User</li>
+							<li>Input: List of usernames (user_id or handle)</li>
+							<li>180 API calls per single user / 15 minutes</li>
+						</ul>
+	
+						<h4>A user’s network consisting of his connections (REST)</h4>
+						<ul>
+							<li>Followers
+							<ul>
+								<li>Twitter Object: User</li>
+								<li>Input: List of usernames (user_id or handle)</li>
+								<li>15 API calls per single user / 15 minutes</li>
+							</ul>
+							</li>
+							<li>Friends
+							<ul>
+								<li>Twitter Object: User</li>
+								<li>Input: List of usernames (user_id or handle)</li>
+								<li>15 API calls per single user / 15 minutes</li>
+							</ul>
+							</li>
+						</ul>
+
+						<h4>Tweets published by a user (REST, Streaming)</h4>
+						<ul>
+							<li>REST
+							<ul>
+								<li>Twitter Object: Tweets</li>
+								<li>Input: List of usernames (user_id or handle)</li>
+								<li>180 API calls per single user / 15 minutes.</li>
+								<li>Up to 200 tweets collected per call, up to 3200 per timeline.</li>
+							</ul>
+							</li>
+							<li>Streaming
+							<ul>
+								<li>Twitter Object: Tweets</li>
+								<li>Input: List of usernames (user_id or handle)</li>
+								<li>Allowed up to 5,000 Twitter userids</li>
+								<li>Only captures public tweets</li>
+							</ul>
+							</li>
+						</ul>
+
+						<h4>Search results on Twitter (REST, Streaming)</h4>
+						<ul>
+							<li>REST
+							<ul>
+								<li>Twitter Object: Tweets</li>
+								<li>Input: Queries</li>
+								<li>180 API calls per single user / 15 minutes</li>
+								<li>Tweets from previous 10 days</li>
+							</ul>
+							</li>
+							<li>Streaming (Needs Updating)
+							<ul>
+								<li>Twitter Object: Tweets</li>
+								<li>Input: Queries</li>
+								<li>15 API calls per single user / 15 minutes</li>
+								<li>Tweets from previous 10 days</li>
+							</ul>
+							</li>
+						</ul>
+
+						<h4>Location of Tweets</h4>
+						<ul>
+							<li>~1% of tweets are have geolocation data</li>
+						</ul>
+	
+					</aside>
+				</section>
+
+				<section>
+						<div><h2>Connecting to Data </h2> <img width="200" height="125" src="/img/pymongo.png"></div>
+
+						<ul>
+							<li class="fragment">First, need authentication to connect to Twitter (<a href="https://dev.twitter.com/oauth">OAuth</a>)</li>
+							<li class="fragment">Next, need a general purpose programming language to talk with both the API and your database
+							<ul>
+								<li> Ex: Python, PHP, JavaScript/Node, Ruby</li>
+							</ul>
+							</li>
+							<li class="fragment"> <a href="https://dev.twitter.com/overview/api/twitter-libraries">Many libraries available</a> to ease in connecting to the API
+							<ul>
+								<li>Ex: <a href="http://twython.readthedocs.org/en/latest/">Twython</a></li>
+							</ul>
+							</li>
+							<li class="fragment">Likewise, you’ll need a library to connect to your database
+							<ul>
+								<li>Ex: <a href="http://api.mongodb.org/python/current/">PyMongo</a>, to integrate with MongoDB</li>
+							</ul>
+							</li>
+						</ul>
+
+
+
+
+						<aside class="notes">
+						<ul>
+							<li>First, need authentication to connect to Twitter (OAuth)
+							<ul>
+								<li>Next, need a general purpose programming language to talk with both the API and your database
+							<ul>
+							<li>I prefer Python because of the ease of readability, and because one of its data structures (dictionaries) closely mimics the storage format of Twitter data</li>
+							</ul>
+							</li>
+							<li>Many libraries available to ease in connecting to the API https://dev.twitter.com/overview/api/twitter-libraries
+
+							<ul>
+							<li>Support in multiple languages available</li>
+							<li>Ex: Twython</li>
+							</ul>
+							</li>
+							<li>Likewise, you’ll need a library to connect to your database
+
+							<ul>
+							<li>MongoDB has great support for Python through its supported package, PyMongo</li>
+							</ul>
+							</li>
+							</ul>
+							</li>
+						</ul>
+						</aside>
+
+				</section>				
+
+				<section>
+					<section>
+						<h2>Twitter Data Storage</h2>
+						<ul>
+							<li>Data stored as JSON (JavaScript Object Notation)
+							<ul>
+								<li>Key-Value pair</li>
+								<li>Allows for nesting of fields and is flexible</li>
+								<pre><code data-trim>
+{u'_id': ObjectId('53d11ddd28975720fa77c8aa'),
+ u'contributors': None,
+ u'coordinates': None,
+ u'created_at': u'Thu Jul 24 14:10:49 +0000 2014',
+ u'favorite_count': 2,
+ u'favorited': False,
+ u'geo': None,
+ u'id': 492310941657481216L,
+ u'id_str': u'492310941657481216',	
+ u'lang': u'en',
+ u'place': None,
+ u'retweet_count': 0,
+ u'retweeted': False,
+ u'text': u'i need to doze off before i doze off \n\U0001f634\U0001f634',
+ u'truncated': False}
+    </code></pre>
+							</ul>
+							</li>
+							<li>Based on tweet data structure and volume, NoSQL databases are a great storage solution</li>
+							<li>Due to the learning curve, other output types might be more practical (ex: csv files)
+						</ul>
+					</section>
+				
+					<section>
+						<h2>NoSQL example: MongoDB</h2>
+						<ul>
+							<li>Document-Oriented Storage
+								<ul>
+									<li>MongoDB stores its data in JSON-style objects.This makes it very easy to store raw documents from Twitter’s APIs.</li>
+								</ul>
+							</li>
+							<li>Index Support
+								<ul>
+									<li>MongoDB allows for indexes on any field, which makes it easy to create indexes optimized for your application.</li>
+								</ul>
+							</li>
+							<li>Straightforward Queries
+								<ul>
+									<li>MongoDB’s queries, while syntactically much different from SQL, are semantically very similar. In addition, MongoDB supports MapReduce, which allows for easy lookups in the data.</li>
+								</ul>
+							</li>
+							<li>Speed
+								<ul>
+									<li>Figure below shows a comparison of query speed between the relational model and MongoDB.</li>
+								</ul>
+							</li>
+						</ul>	
+					</section>
+				</section>
+				
+	
+				<section>
+					<h2>Analysis</h2>
+
+					<a src="http://stanford.edu/~jgrimmer/tad2.pdf"><img width="800" height="600" src="/img/jgrimmer.png"></a>
+
+					<aside class="notes">
+					<ul>
+						<li>Sentiment Analysis</li>
+						<li>Probabilistic Topic Modeling</li>
+						<li>Ideological Scaling</li>
+						<li>Text Clustering</li>
+						<li>Classification</li>
+						<li>Entity relation modeling (i.e., learning relations between named entities)</li>
+						<li>Social Network Analysis</li>
+						<li>http://stanford.edu/~jgrimmer/tad2.pdf</li>
+					</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Complications!</h2>
+					<ul>
+						<li class="fragment">Rate limits (15 minute window)</li>
+						<li class="fragment">Public vs. Private</li>
+						<li class="fragment">Non-trivial Data Preparation</li>
+						<li class="fragment"><a href="https://dev.twitter.com/overview/api/response-codes">Error codes and Responses</a></li>
+					</ul>
+
+					<div class="fragment"><img src="/img/error_joke.jpg"></div>
+
+					<aside class="notes">
+					<ul>
+						<li>Rate limits (window is 15 minutes)
+						<ul>
+							<li>Depending on analysis, either need multiple machines or be willing to wait</li>
+						</ul>
+						</li>
+						<li>Public vs. Private
+						<ul>
+							<li>Can get profile information on almost any user; however, tweets are restricted if a user decides to be private</li>
+						</ul>
+						</li>
+						<li>Non-trivial Data Preparation
+						<ul>
+							<li>Tokenization, lemmas / stemming, case folding, POS tagging, twitter entities (RT, handles, mentions, hyperlinks),emoticons, slang, sparse data</li>
+						</ul>
+						</li>
+						<li><a src="https://dev.twitter.com/overview/api/response-codes">Error codes and Responses</a></li>
+					</ul>
+					</aside>
+
+
+				</section>
+
+				<section>
+					<h2>Conclusion</h2>
+					<ul>
+						<li class="fragment">Although collecting, storing, and analyzing Twitter data can be complicated, surveys are also complicated and labor intensive</li>
+						<li class="fragment"> Twitter data is not perfect - for instance, Twitter may decide to pull the plug on the public API, leaving everybody in a lurch. </li>
+						<li class="fragment">Nonetheless, with the continuing trend of <em>falling response rates</em> and <em>inadequate sampling frames</em>, getting cheap and timely data without burdening respondents is an enticing proposition.</li>
+					</ul>	
+
+					<br>
+					<br>
+					<div class="fragment"><p><strong>Questions?  Feel free to reach out to <u>rchew@rti.org</u></strong></p></div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
