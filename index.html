@@ -31,20 +31,20 @@
 	<body>
 
 		<div class="reveal">
-
+		<header style="position: absolute; bottom: 20px; left: 20px; z-index:500;"><img src="img/rti_blue.gif" alt="logo" /></header>
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Using Twitter Data for Research</h1>
+				<section data-state="header1">
+					<h1>Using Twitter Data for <br>Research</h1>
 					<h3>Issues of Data Retrieval, Management, and Processing </h3>
 					<p>
-						<small><a href="http://www.rti.org/newsroom/people.cfm?obj=18917A76-CE03-097B-1D7B931A3EC50A70">Rob Chew</a></small></br><small><a href="http://www.rti.org/"> RTI International </a></small>
+						<a href="http://www.rti.org/newsroom/people.cfm?obj=18917A76-CE03-097B-1D7B931A3EC50A70">Rob Chew </a>, <a href="https://blogs.rti.org/surveypost/contributor/annice-kim/">Annice Kim </a>, <a href="https://www.rti.org/newsroom/people.cfm?obj=1E719D20-EAAB-C28B-8CD1CBA06ED60D78">Paul Ruddle </a>, <a href="http://www.rti.org/newsroom/people.cfm?obj=59DEEC91-A133-0326-3F17D23CDD97EE80">Clay Heaton </a><br><p><a href="http://www.rti.org/"> RTI International </a></p>
 					</p>
 				</section>
 
 				<section>
 					<h2>The Social Media Landscape</h2>
-						<p>Opinion's never been this <em>cheap</em>, <em>timely</em>, or <em>abundant</em></p>
+						<p>Opinion has never been this <em>cheap</em>, <em>timely</em>, or <em>abundant</em></p>
 						<img width="150" height="150" src="img/twitter_logo.png"><img width="150" height="150" src="img/fb_logo.jpg"><img width="150" height="150" src="img/insta_logo.png"><img width="150" height="150" src="img/pin_logo.png"><img width="150" height="150" src="img/tumblr_logo.jpg">
 						
 						<p>
@@ -208,9 +208,9 @@
 										<li>18,000 profiles per 15 mins</li>
 									</ul>
 								</li>
-								<li class="fragment"><strong>A user’s network consisting of his connections (<a href="https://dev.twitter.com/rest/reference/get/friends/list">Friends</a>, <a href="https://dev.twitter.com/rest/reference/get/followers/list">Followers)</strong></a>
+								<li class="fragment"><strong>A user’s network consisting of his connections (<a href="https://dev.twitter.com/rest/reference/get/friends/ids">Friends</a>, <a href="https://dev.twitter.com/rest/reference/get/followers/ids">Followers)</strong></a>
 									<ul>
-										<li>300 profiles per 15 mins</li>
+										<li>7500 user ids per 15 mins</li>
 									</ul>
 								</li>
 								<li class="fragment"><a href="https://dev.twitter.com/rest/reference/get/statuses/user_timeline"><strong>Tweets published by a user</strong></a>
@@ -441,6 +441,16 @@
 					<section>
 						<h2>NoSQL example: MongoDB</h2>
 						<ul>
+							<li>Document-Oriented Storage</li>
+							<li>Index Support</li>
+							<li>Straightforward Queries</li>
+							<li>Speed</li>
+						</ul>
+
+						<a href="http://tweettracker.fulton.asu.edu/tda/"><img src="img/nosql.png"></a>
+
+						<aside class="notes">
+						<ul>
 							<li>Document-Oriented Storage
 								<ul>
 									<li>MongoDB stores its data in JSON-style objects.This makes it very easy to store raw documents from Twitter’s APIs.</li>
@@ -461,7 +471,8 @@
 									<li>Figure below shows a comparison of query speed between the relational model and MongoDB.</li>
 								</ul>
 							</li>
-						</ul>	
+						</ul>
+						</aside>	
 					</section>
 				</section>
 				
